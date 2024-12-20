@@ -53,10 +53,9 @@
   li {
     display: grid;
   }
-
 .container {
     display: grid;
-    grid-template-rows: 1fr, 10fr;
+    grid-template-rows: 1fr 9fr;
     grid-template-columns: 300px 3fr;
     height: 100vh;
     width: 100%;
@@ -68,8 +67,8 @@
 }
 
 .header {
-    grid-row: 2;
-    grid-column: 2 / 6;
+    grid-row: 1;
+    grid-column: 2;
 }
 
 .main {
@@ -81,6 +80,8 @@
 .sidebar li {
     display: flex;
     align-items: start;
+    margin: 5px 0px;
+    font-size: 20px;
 }
 
 .sidebar {
@@ -93,8 +94,9 @@
 
 header {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows:80px 100px;
     align-items: center;
+    background-color: #ffffff;
 }
 
 header .top {
@@ -114,16 +116,22 @@ header .top {
 
 .bar {
     background-color: rgb(204, 204, 204);
-    height: 25px;
+    height: 30px;
     border-radius: 40px;
     width: 90%;
 }
 
 .bottom {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin: 10px 0px;
+    margin: 10px 20px;
+}
+
+.bottom-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .bottom button{
@@ -138,17 +146,16 @@ header .top {
 
 .main {
     display: grid;
-    grid-template-columns: 4fr 3fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     padding: 30px;
     background-color: white;
 }
 
-.project {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60px, 200px));
-    gap: 20px;
-    padding-right: 30px;
+.project-items {
+  display: grid;
+  margin: 30px 30px 0px 0px;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .project-heading {
@@ -167,13 +174,7 @@ header .top {
     border-left: 4px purple solid;
 }
 
-.accouncements {
-  grid-column: 1 ;
-}
 
-.trending {
-  grid-column: 2 / 3;
-}
 
 .announcement-heading {
     font-size: 20px;
@@ -190,6 +191,7 @@ p:first-child {
     padding: 20px;
     margin-top: 30px;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .announcements li {
@@ -225,4 +227,38 @@ p:first-child {
   display: flex;
   align-self: end;
   justify-self: end;
+}
+
+.trending {
+    background-color: #d8b4fe;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+.trending-container .head{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.logo {
+  background: url(images/image.png) 0 0;
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;  
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.bottom .logo {
+  min-height: 80px;
+  min-width: 80px;
+  justify-self: center;
+  margin: 0px 20px;
 }
