@@ -3,6 +3,11 @@
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
 
+
+@font-face {
+  font-family: Satoshi;
+  src: url(fonts/Satoshi-Regular.woff2) format('woff2');
+}
 *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -14,7 +19,7 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    font-family: "Helvetica", sans-serif;
+    font-family: Satoshi;
 
   }
   
@@ -45,16 +50,20 @@
     isolation: isolate;
   }
 
+  li {
+    display: grid;
+  }
+
 .container {
     display: grid;
-    grid-template-rows: 1fr 9fr;
-    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr, 10fr;
+    grid-template-columns: 300px 3fr;
     height: 100vh;
     width: 100%;
 }
 
 .sidebar {
-    background-color: rebeccapurple;
+    background-color: rgb(206, 158, 255);
     grid-row: 1 / 3;
 }
 
@@ -90,14 +99,24 @@ header {
 
 header .top {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr 1fr 2fr;
+    grid-template-columns: 1fr 9fr 1fr 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.top img {
+  height: 30px;
+}
+
+#search {
+  justify-self: end;
 }
 
 .bar {
     background-color: rgb(204, 204, 204);
     height: 25px;
     border-radius: 40px;
-
+    width: 90%;
 }
 
 .bottom {
@@ -119,31 +138,41 @@ header .top {
 
 .main {
     display: grid;
-    grid-template-columns: 5fr 3fr;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: 1fr 1fr;
     padding: 30px;
     background-color: white;
 }
 
 .project {
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(auto-fit, minmax(60px, 200px));
     gap: 20px;
     padding-right: 30px;
 }
 
 .project-heading {
-    grid-column: 1 / 3;
+    grid-column: 1 / -1;
     font-size: 20px;
     font-weight: bold;
     align-self: center;
 }
 
 .projects {
+    display: grid;
     height: 250px;
     background-color: #d8b4fe;
     padding: 20px;
     border-radius: 5px;
     border-left: 4px purple solid;
+}
+
+.accouncements {
+  grid-column: 1 ;
+}
+
+.trending {
+  grid-column: 2 / 3;
 }
 
 .announcement-heading {
@@ -165,4 +194,35 @@ p:first-child {
 
 .announcements li {
     margin-bottom: 20px;
+}
+
+.sidebar img {
+  height: 30px;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+.sidebar li {
+  align-items: center;
+}
+
+.git {
+  background-image: url(icons/github.svg);
+  height: 25px;
+  width: 25px;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.live {
+  background-image: url(icons/eye.svg);
+  height: 25px;
+  width: 25px;
+  background-repeat: no-repeat;
+}
+
+.projects ul{
+  display: flex;
+  align-self: end;
+  justify-self: end;
 }
